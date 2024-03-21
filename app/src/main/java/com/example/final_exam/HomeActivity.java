@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
@@ -21,7 +23,12 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         homeBinding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(homeBinding.getRoot());
+
         addFragment(new Home());
+        focusFragment();
+    }
+
+    private void focusFragment(){
         homeBinding.navBottom.setOnItemSelectedListener(item -> {
             if(item.getItemId()==R.id.home);
             {
@@ -37,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
             return  true;
         });
     }
-    public void addFragment(Fragment fragment) {
+    private void addFragment(Fragment fragment) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ftc = fm.beginTransaction();
         ftc.replace(R.id.FrameLayout, fragment);
