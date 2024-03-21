@@ -1,29 +1,34 @@
 package com.example.final_exam;
 
 import android.content.Context;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.final_exam.Fragment.Home;
-import com.example.final_exam.Fragment.Browse;
-import com.example.final_exam.databinding.ItemTitleBinding;
-
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
 public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleViewHolder>{
     Context context;
+    View view;
     List<Title> titleList;
-    ItemTitleBinding binding;
+
+    public TitleAdapter(Context context, List<Title> titleList) {
+        this.context = context;
+        this.titleList = titleList;
+    }
+
     @NonNull
     @Override
     public TitleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        binding = ItemTitleBinding.inflate(LayoutInflater.from(context), parent, false);
-        return new TitleViewHolder(binding.getRoot());
+        view = LayoutInflater.from(context).inflate(R.layout.item_title, parent, false);
+        return new TitleViewHolder(view);
     }
 
     @Override
@@ -35,10 +40,14 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleViewHol
         holder.titleLabel.setText(title.getTitleLabel());
         holder.titleDescription.setText(title.getTitleDescription());
 
+        ItemAdapter itemAdapter = new ItemAdapter(context,title.getItemList(),position);
+        holder.titleRcv.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
+        holder.titleRcv.setAdapter(itemAdapter);
     }
 
     @Override
     public int getItemCount() {
+        if(titleList != null) return titleList.size();
         return 0;
     }
 
@@ -47,9 +56,9 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleViewHol
         RecyclerView titleRcv;
         public TitleViewHolder(@NonNull View itemView) {
             super(itemView);
-            titleDescription = (TextView) itemView.findViewById(R.id.titleDescription);
-            titleLabel = (TextView) itemView.findViewById(R.id.titleLabel);
-            titleRcv = (RecyclerView) itemView.findViewById(R.id.titleRcv);
+            titleDescription = itemView.findViewById(R.id.titleDescription);
+            titleLabel = itemView.findViewById(R.id.titleLabel);
+            titleRcv = itemView.findViewById(R.id.titleRcv);
         }
     }
 }

@@ -4,6 +4,14 @@ public class Item {
     int itemImg;
     String itemTitle, itemDescription,itemPlaylist, itemArtist;
 
+    public Item(int itemImg, String itemTitle, String itemDescription, String itemPlaylist, String itemArtist) {
+        this.itemImg = itemImg;
+        this.itemTitle = itemTitle;
+        this.itemDescription = itemDescription;
+        this.itemPlaylist = itemPlaylist;
+        this.itemArtist = itemArtist;
+    }
+
     public int getItemImg() {
         return itemImg;
     }
