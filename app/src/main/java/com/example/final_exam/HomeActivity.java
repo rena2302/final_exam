@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(homeBinding.getRoot());
         viewUserName=findViewById(R.id.hiUserName);
         userName=getIntent().getStringExtra("userName");
-        viewUserName.setText(userName);
+        viewUserName.setText("Hi," + userName);
         addFragment(new Home());
         focusFragment();
     }
