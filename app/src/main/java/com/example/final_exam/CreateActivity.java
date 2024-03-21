@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.regex.Pattern;
@@ -15,6 +16,7 @@ public class CreateActivity extends AppCompatActivity {
     EditText emailInput,passwordInput,cfPasswordInput,userNameInput;
     String email,pass,cfPass,userName;
     Button btnSubmit;
+    TextView haveAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,13 @@ public class CreateActivity extends AppCompatActivity {
         cfPasswordInput=findViewById(R.id.rePassword);
         btnSubmit=findViewById(R.id.loginButton);
         userNameInput=findViewById(R.id.username);
+        haveAccount=findViewById(R.id.haveAccount);
+        haveAccount.setOnClickListener(v->{
+            Intent intent = new Intent(this,MainActivity.class);
+            intent.putExtra("userName","pppppp");
+            intent.putExtra("password","ppppppp");
+            startActivity(intent);
+        });
         btnSubmit.setOnClickListener(v -> {
             email=emailInput.getText().toString();
             pass=passwordInput.getText().toString();
