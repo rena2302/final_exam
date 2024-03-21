@@ -39,11 +39,11 @@ public class Home extends Fragment {
     }
     private void addList(){
         itemList = new ArrayList<>();
-        itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
-        itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
-        itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
-        itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
-        itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
+        itemList.add(new Item(R.drawable.album1,"Title", "Description", "Playlist 1","Artist Name"));
+        itemList.add(new Item(R.drawable.album2,"Title", "Description", "Playlist 2","Artist Name"));
+        itemList.add(new Item(R.drawable.album3,"Title", "Description", "Playlist 3","Artist Name"));
+        itemList.add(new Item(R.drawable.album4,"Title", "Description", "Playlist 4","Artist Name"));
+        itemList.add(new Item(R.drawable.album5,"Title", "Description", "Playlist 5","Artist Name"));
 
         titleList = new ArrayList<>();
         titleList.add(new Title("Title", "Subheading about this section", itemList));
