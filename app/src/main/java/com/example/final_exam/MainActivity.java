@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     private void setClick(){
         btn.setOnClickListener(v->{
             Intent i = new Intent(MainActivity.this,HomeActivity.class);
+            i.putExtra("userName",name);
             startActivity(i);
         });
     }
