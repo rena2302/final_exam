@@ -47,6 +47,7 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleViewHol
 
     @Override
     public int getItemCount() {
+        if(titleList != null) return titleList.size();
         return 0;
     }
 
@@ -56,7 +57,7 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TitleViewHol
         public TitleViewHolder(@NonNull View itemView) {
             super(itemView);
             titleDescription = itemView.findViewById(R.id.titleDescription);
-            titleLabel = itemView.findViewById(R.id.itemTitle);
+            titleLabel = itemView.findViewById(R.id.titleLabel);
             titleRcv = itemView.findViewById(R.id.titleRcv);
         }
     }

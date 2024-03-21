@@ -3,8 +3,8 @@ package com.example.final_exam;
 import java.util.List;
 
 public class Title {
-    String titleLabel, titleDescription;
-    List<Item> itemList;
+    private  String titleLabel, titleDescription;
+    private  List<Item> itemList;
 
     public Title(String titleLabel, String titleDescription, List<Item> itemList) {
         this.titleLabel = titleLabel;

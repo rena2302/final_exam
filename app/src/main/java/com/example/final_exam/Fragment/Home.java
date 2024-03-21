@@ -15,6 +15,7 @@ import com.example.final_exam.R;
 import com.example.final_exam.Title;
 import com.example.final_exam.TitleAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Home extends Fragment {
@@ -26,10 +27,22 @@ public class Home extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home, container, false);
+        addList();
         setContentRcv();
         return view;
     }
     private void addList(){
+        itemList = new ArrayList<>();
+        itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
+        itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
+        itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
+        itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
+        itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
+
+        titleList = new ArrayList<>();
+        titleList.add(new Title("Title", "Description", itemList));
+        titleList.add(new Title("Title", "Description", itemList));
+        titleList.add(new Title("Title", "Description", itemList));
     }
     private void setContentRcv(){
         RecyclerView rcv = (RecyclerView) view.findViewById(R.id.homeRcv);
