@@ -18,7 +18,6 @@ import com.example.final_exam.databinding.ActivityHomeBinding;
 public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding homeBinding;
-    TextView viewUserName;
     String userName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
