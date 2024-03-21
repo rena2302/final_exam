@@ -1,7 +1,5 @@
 package com.example.final_exam;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,8 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class MainActivity extends AppCompatActivity {
+
     EditText userNameView,userPasswordView;
     Button btn;
     String name,password;
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     if(userInputPassword.equals(password)){
                         //success case
                         Log.d("LOGIN ", "Login success");
-
+                        setClick();
                     }
                     else{
                         Toast.makeText(MainActivity.this,"userName or password invalid",Toast.LENGTH_LONG).show();
@@ -65,5 +63,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        setClick();
     }
+    private void setClick(){
+        btn.setOnClickListener(v->{
+            Intent i = new Intent(MainActivity.this,HomeActivity.class);
+            startActivity(i);
+        });
+    }
+
 }
