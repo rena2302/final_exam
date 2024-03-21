@@ -6,6 +6,12 @@ public class Title {
     String titleLabel, titleDescription;
     List<Item> itemList;
 
+    public Title(String titleLabel, String titleDescription, List<Item> itemList) {
+        this.titleLabel = titleLabel;
+        this.titleDescription = titleDescription;
+        this.itemList = itemList;
+    }
+
     public String getTitleLabel() {
         return titleLabel;
     }
