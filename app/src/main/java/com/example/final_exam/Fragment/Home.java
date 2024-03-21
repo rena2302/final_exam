@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.final_exam.Item;
 import com.example.final_exam.R;
@@ -22,11 +23,16 @@ public class Home extends Fragment {
     View view;
     List<Title> titleList;
     List<Item> itemList;
+    String userName;
+    TextView txt_hi;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home, container, false);
+        userName=this.getArguments().getString("userName");
+        txt_hi=view.findViewById(R.id.txt_Hi);
+        txt_hi.setText("Hi, "+userName);
         addList();
         setContentRcv();
         return view;

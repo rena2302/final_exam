@@ -25,9 +25,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         homeBinding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(homeBinding.getRoot());
-        viewUserName=findViewById(R.id.hiUserName);
         userName=getIntent().getStringExtra("userName");
-        viewUserName.setText("Hi," + userName);
         addFragment(new Home());
         focusFragment();
     }
@@ -49,6 +47,9 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
     private void addFragment(Fragment fragment) {
+        Bundle bundle = new Bundle();
+        bundle.putString("userName",userName);
+        fragment.setArguments(bundle);
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ftc = fm.beginTransaction();
         ftc.replace(R.id.FrameLayout, fragment);
