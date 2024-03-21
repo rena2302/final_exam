@@ -43,10 +43,10 @@ public class CreateActivity extends AppCompatActivity {
             startActivity(intent);
         });
         btnSubmit.setOnClickListener(v -> {
-            email=emailInput.getText().toString();
-            pass=passwordInput.getText().toString();
-            cfPass=cfPasswordInput.getText().toString();
-            userName=userNameInput.getText().toString();
+            email=emailInput.getText().toString().trim();
+            pass=passwordInput.getText().toString().trim();
+            cfPass=cfPasswordInput.getText().toString().trim();
+            userName=userNameInput.getText().toString().trim();
             if(email.isEmpty()||pass.isEmpty()||cfPass.isEmpty()||userName.isEmpty()){
                 Toast.makeText(CreateActivity.this,"Please enter all the fields",Toast.LENGTH_LONG).show();
             }
