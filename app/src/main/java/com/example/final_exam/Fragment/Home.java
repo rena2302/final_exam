@@ -40,9 +40,9 @@ public class Home extends Fragment {
         itemList.add(new Item(R.drawable.pg1,"Title", "Description", "Playlist","Artist"));
 
         titleList = new ArrayList<>();
-        titleList.add(new Title("Title", "Description", itemList));
-        titleList.add(new Title("Title", "Description", itemList));
-        titleList.add(new Title("Title", "Description", itemList));
+        titleList.add(new Title("Title", "Subheading about this section", itemList));
+        titleList.add(new Title("Title", "Subheading about this section", itemList));
+        titleList.add(new Title("Title", "Subheading about this section", itemList));
     }
     private void setContentRcv(){
         RecyclerView rcv = (RecyclerView) view.findViewById(R.id.homeRcv);
