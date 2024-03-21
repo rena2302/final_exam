@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
-
+    <TextView
+        android:id="@+id/hiUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

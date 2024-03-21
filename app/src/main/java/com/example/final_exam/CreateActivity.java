@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ public class CreateActivity extends AppCompatActivity {
     String email,pass,cfPass,userName;
     Button btnSubmit;
     TextView haveAccount;
+    ImageView backLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,13 @@ public class CreateActivity extends AppCompatActivity {
         btnSubmit=findViewById(R.id.loginButton);
         userNameInput=findViewById(R.id.username);
         haveAccount=findViewById(R.id.haveAccount);
+        backLogin=findViewById(R.id.backBtn);
+        backLogin.setOnClickListener(v->{
+            Intent intent = new Intent(this,MainActivity.class);
+            intent.putExtra("userName","pppppp");
+            intent.putExtra("password","ppppppp");
+            startActivity(intent);
+        });
         haveAccount.setOnClickListener(v->{
             Intent intent = new Intent(this,MainActivity.class);
             intent.putExtra("userName","pppppp");

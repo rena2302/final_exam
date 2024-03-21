@@ -1,13 +1,13 @@
 package com.example.final_exam;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import com.example.final_exam.Fragment.Browse;
 import com.example.final_exam.Fragment.Home;
@@ -18,12 +18,16 @@ import com.example.final_exam.databinding.ActivityHomeBinding;
 public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding homeBinding;
+    TextView viewUserName;
+    String userName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         homeBinding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(homeBinding.getRoot());
-
+        viewUserName=findViewById(R.id.hiUserName);
+        userName=getIntent().getStringExtra("userName");
+        viewUserName.setText(userName);
         addFragment(new Home());
         focusFragment();
     }
