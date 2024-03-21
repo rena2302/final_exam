@@ -9,9 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ontap.Fragment.Item;
-import com.example.ontap.Fragment.Title;
-import com.example.ontap.databinding.ItemTitleBinding;
+import com.example.final_exam.Fragment.Home;
+import com.example.final_exam.Fragment.Browse;
+import com.example.final_exam.databinding.ItemTitleBinding;
 
 import java.util.List;
 
