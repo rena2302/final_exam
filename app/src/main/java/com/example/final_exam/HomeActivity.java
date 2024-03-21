@@ -18,16 +18,13 @@ import com.example.final_exam.databinding.ActivityHomeBinding;
 public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding homeBinding;
-    TextView viewUserName;
     String userName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         homeBinding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(homeBinding.getRoot());
-        viewUserName=findViewById(R.id.hiUserName);
         userName=getIntent().getStringExtra("userName");
-        viewUserName.setText("Hi," + userName);
         addFragment(new Home());
         focusFragment();
     }
