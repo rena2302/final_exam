@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">final_exam</string>
+    <string name="createAccount">Or <b><u>Create new Account</u></b></string>
+    <string name="login">Already have an <b><u>Account?</u></b></string>
+</resources>
