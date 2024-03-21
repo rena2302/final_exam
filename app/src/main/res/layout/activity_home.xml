@@ -5,8 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/homeRcv"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/nav_Bottom"
+        android:id="@+id/FrameLayout"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        app:menu="@menu/menu_bottomnav"
+        android:id="@+id/nav_Bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>
